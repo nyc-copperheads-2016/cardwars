@@ -2,3 +2,9 @@ class Round < ActiveRecord::Base
   has_many :decks
   belongs_to :user
 end
+
+    # The user plays every card in the deck.
+    # The cards are played in a random order.
+    # For each card, the user is shown a prompt and responds by submitting a guess.
+    # After submitting a guess, the user is informed whether or not the guess was correct and shown the correct answer.
+    # The round continues until each card is answered correctly—after going through each card, cards answered incorrectly will be displayed again.
