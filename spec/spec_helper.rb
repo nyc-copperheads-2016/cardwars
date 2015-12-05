@@ -1,5 +1,6 @@
 require 'rubygems'
 
+
 # All our specs should require 'spec_helper' (this file)
 
 # If RACK_ENV isn't set, set it to 'test'.  Sinatra defaults to development,
@@ -21,7 +22,7 @@ RSpec.configure do |config|
    DatabaseCleaner.strategy = :transaction
    DatabaseCleaner.clean_with(:truncation)
   end
-   
+
   config.around(:each) do |example|
     DatabaseCleaner.cleaning do
        example.run
