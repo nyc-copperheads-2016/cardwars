@@ -1,5 +1,6 @@
 get '/decks/:id' do
-  current_deck = Deck.find(params[:id])
-  new_round = Round.create(deck_id: params[:id], user_id: session[:user_id])
-  erb :'rounds/new', locals: { deck: current_deck, round: new_round }
+  new_round = Round.create(user_id: session[:user_id])
+  new_round.decks << Deck.find(params[:id])
+  new_card = new_round.decks.first.cards.shuffle.pop
+  erb :'rounds/new', locals: { round: new_round, card: new_card }
 end
