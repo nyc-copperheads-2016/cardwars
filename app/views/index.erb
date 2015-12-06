@@ -1,0 +1,11 @@
+<div class="container">
+  <h1><a href="/">Welcome to Card Wars!</a></h1>
+
+  <a href="/users/new">Register</a>
+  <a href="/sessions/new">Login</a>
+  
+  <% available_decks.each do |d| %>
+  <h2><a href="/decks/<%= d.id %>"><%= d.name %></a></h2>
+  <% end %>
+  
+</div>

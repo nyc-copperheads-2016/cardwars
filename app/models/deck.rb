@@ -9,6 +9,6 @@ class Deck < ActiveRecord::Base
   end
   def next_card
     #returns a random card in the deck
-    self.cards.find_by(:id = rand(self.cards.size + 1))
+    self.cards.find_by(id: rand(self.cards.size + 1))
   end
 end

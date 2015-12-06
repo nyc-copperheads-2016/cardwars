@@ -1,0 +1,8 @@
+<div class="container">
+    <h1><a href="/">Card Wars!</a></h1>
+   
+    <% available_decks.each do |d| %>
+        <h2><a href="/decks/<%= d.id %>"><%= d.name %></a></h2>
+    <% end %>
+    
+</div>
