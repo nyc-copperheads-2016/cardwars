@@ -1,0 +1,24 @@
+<center>
+ <% if @errors %>
+  <div>
+     <span>Please fix the following error(s):</span>
+        <ul>
+          <% @errors.each do |error| %>
+            <li><%= error %></li>
+          <% end %>
+        </ul>
+  </div>
+<% end %>
+  
+  <h4>Welcome Back! Please Sign In:<h4>
+  <br>
+    <br>
+  <form action="/index" method="get">
+  Username:<input type="text" name="user[username]" placeholder="Username">
+    <br>
+  Password: <input type="password" name="user[password_hash]" placeholder="Password">
+    <br>
+      <br>
+   <input type="submit" value="Login">
+</form>
+  

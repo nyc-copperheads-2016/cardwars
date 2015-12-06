@@ -1,0 +1,18 @@
+<div>
+  <h4><a href="/index">Play a new game!</a></h4>
+</div>
+<div>
+  <h4><%= @user.username %>'s Playing History:</h4>
+</div>
+
+
+<% @decks.each do |deck| %>
+<p>Deck Name : <%= deck.name.upcase %> </p>
+<p> Date Played - <%= deck.rounds.first.created_at.localtime.strftime("%B %-d, %Y") %></p>
+<p> There were <%= deck.cards.count %> cards in this deck.
+<p>You made a total of <%= deck.rounds.first.total_guesses %> guesses during the round. </p>
+
+ <p> You answered <%= deck.rounds.first.incorrect_guesses %> wrong on the first try. </p>
+
+<% end %>
+
