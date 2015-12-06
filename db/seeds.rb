@@ -1,6 +1,6 @@
 # Jay's Star Wars Deck
 
-Deck.create(name: "Star Wars")
+Deck.create(name: "Star Wars", round_id: 1)
 sw_id = Deck.find_by(name: "Star Wars").id
 
 star_wars_cards = [
