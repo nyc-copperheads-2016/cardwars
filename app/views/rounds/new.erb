@@ -1,8 +1,16 @@
 <div class="container">
     <h1><a href="/">Card Wars!</a></h1>
-   
-    <% available_decks.each do |d| %>
-        <h2><a href="/decks/<%= d.id %>"><%= d.name %></a></h2>
-    <% end %>
     
+    <p><%= round.decks.first.name %></p>
+
+    <p><%= card.question %></p>
+
+    <form action="/rounds/answer/<%= round.id %>" method="post">
+        <label>Answer:</label>
+        <input type="text" name="user_answer" value="" />
+        <input type="hidden" name="card" value="<%= round.decks.first.id %>"/>
+        <input type="hidden" name="_method" value="PUT" />
+        <input type="submit" value="submit answer" />
+    </form>
+
 </div>
