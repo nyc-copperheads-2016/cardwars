@@ -1,3 +1,0 @@
-get '/decks/:id' do
-  
-end
