@@ -41,3 +41,48 @@ star_wars_cards = [
 star_wars_cards.each do |card|
   Card.create(card)
 end
+###########################################################################################################################
+# Courtney's Space Triva Deck!
+
+Deck.create(name: "SPACE!", round_id: 2)
+sp_id = Deck.find_by(name: "SPACE").id
+
+space_cards = [
+  { question: "What is the closest planet to the Sun?         ",
+    answer: "Mercury",
+    deck_id: sp_id
+  },
+  { question: " What is the name of the 2nd biggest planet in our solar system? ",
+    answer: " Saturn",
+    deck_id: sp_id
+  },
+  { question: " What is the hottest planet in our solar system?",
+    answer: "Venus",
+    deck_id: sp_id
+  },
+  { question: "What planet is famous for its big red spot on it?",
+    answer: "Jupiter",
+    deck_id: sp_id
+  },
+  { question: "Can humans breathe normally in space as they can on Earth?",
+    answer: "No",
+    deck_id: sp_id
+  },
+  { question: "Is the sun a star or a planet?",
+    answer: "A Star",
+    deck_id: sp_id
+  },
+  { question: "What planet is known as the red planet?",
+    answer: "Mars",
+    deck_id: sp_id
+  },
+  { question: "What is the name of NASA’s most famous space telescope?",
+    answer: " Hubble Space Telescope",
+    deck_id: sp_id
+  }
+]
+
+space_cards.each do |card|
+  Card.create(card)
+end
+
