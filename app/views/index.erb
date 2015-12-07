@@ -1,8 +1,9 @@
 <div class="container">
-  <h1><a href="/">Welcome to Card Wars!</a></h1>
-  
+  <h1><!-- a href="/">W -->Welcome to Card Wars!<!-- </a> --></h1>
+
+<p> Here are the decks that are available for you to play! </p>
   <% available_decks.each do |d| %>
   <h2><a href="/decks/<%= d.id %>"><%= d.name %></a></h2>
   <% end %>
-  
+
 </div>
