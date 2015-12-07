@@ -1,0 +1,15 @@
+<div class="container">
+    <h1><a href="/">Card Wars!</a></h1>
+    
+    <p><%= round.decks.first.name %></p>
+    <p>You answered
+        <% if outcome %>
+            correctly!
+        <% else %>
+            incorrectly! The corrrect answer was: '<%= answer %>'.
+        <% end %></p>
+
+    <p><a href="/rounds/<%= round.id %>">Try another question!</a></p>
+
+    
+</div>
