@@ -9,16 +9,16 @@
         </ul>
   </div>
 <% end %>
-  
+
   <h4>Want To Test Your Smarts? Create A Username and Password Here:<h4>
   <br>
     <br>
-  <form action="/index" method="POST">
-  Username:<input type="text" name="user[username]" placeholder="Enter New Username">
+  <form action="/users" method="POST">
+  Username:<input type="text" name="username" placeholder="Enter New Username">
     <br>
-  Password: <input type="password" name="user[password_hash]" placeholder="Enter New Password">
+  Password: <input type="password" name="password" placeholder="Enter New Password">
     <br>
       <br>
    <input type="submit" value="Register Me">
 </form>
-  
+
