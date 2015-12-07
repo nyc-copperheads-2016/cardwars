@@ -18,7 +18,23 @@
   <title></title>
 </head>
 <body>
-<div id="content">
+
+ <div id="content">
+   <div class="container-fluid">
+  <% if logged_in? %>
+  <span class= "greeting"> Greetings, <%= current_user.username %></span>
+  <a href="/users/<%=current_user.id%>">View Profile</a>
+    <br>
+      <br>
+  <form method='post' action='/sessions'>
+    <input type='hidden' name='_method' value='DELETE' />
+      <input id='logout' type='submit' value='Logout' />
+   </form>
+
+  <% else %>
+   <p><a href="/sessions/new">Login</a>|<a href="/users/new">Sign Up</a>|<a href="/">Home</a></a>
+  <% end %>
+  </div>
   <%= yield %>
 </div>
 </body>
