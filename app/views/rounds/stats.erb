@@ -1,0 +1,17 @@
+<div class="container">
+    <h1><a href="/">Card Wars!</a></h1>
+    
+    <p><%= round.decks.last.name %></p>
+
+    <p><%= card.question %></p>
+
+    <form action="/rounds/answer/<%= round.id %>" method="post">
+        <label>Answer:</label>
+        <input type="text" name="user_answer" value="" />
+        <input type="hidden" name="card" value="<%= card.answer %>"/>
+        <input type="hidden" name="card_id" value="<%= card.id %>"/>
+        <input type="hidden" name="_method" value="PUT" />
+        <input type="submit" value="submit answer" />
+    </form>
+
+</div>
