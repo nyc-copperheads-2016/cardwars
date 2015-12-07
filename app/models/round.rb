@@ -1,5 +1,6 @@
+# coding: utf-8
 class Round < ActiveRecord::Base
-  has_many :decks
+  has_one :deck
   belongs_to :user
 end
 

@@ -7,9 +7,9 @@
 
 
 <% user.rounds.each do |round| %>
-<p>Deck Name : <%= round.decks.name %> </p>
+<p>Deck Name : <%= round.deck.name %> </p>
 <p> Date Played - <%= round.created_at.localtime.strftime("%B %-d, %Y") %></p>
-<p> There were <%= round.decks.last.cards.count %> cards in this deck.
+<p> There were <%= round.deck.cards.count %> cards in this deck.
 <p>You made a total of <%= round.num_guesses %> guesses during the round. </p>
 
  <p> You answered <%= round.correct_first_guess %> right on the first try. </p>
