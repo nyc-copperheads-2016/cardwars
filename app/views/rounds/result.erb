@@ -1,7 +1,8 @@
 <div class="container">
-    <h1><a href="/">Card Wars!</a></h1>
+    <h1>Card Wars!</h1>
     
-    <p><%= round.decks.first.name %></p>
+    <p>You are playing the <%= round.decks.first.name %> deck.</p>
+    
     <p>You answered
         <% if outcome %>
             correctly!
