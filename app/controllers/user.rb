@@ -16,7 +16,8 @@ end
 
 get '/users/:id' do
   # @user = User.find_by(id: session[:user_id])
-  erb :'/users/show'
+  current_user = User.find(params[:id])
+  erb :'/users/show', locals: { user: current_user }
 end
 
 
