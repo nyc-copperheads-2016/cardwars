@@ -22,7 +22,6 @@ get '/rounds/:id' do
     new_card = leftovers.shuffle.pop
     erb :'rounds/new', locals: { round: current_round, card: new_card }
   else
-    binding.pry
     redirect '/'
   end
 end

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -16,28 +15,11 @@
   <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title>CardWars</title>
+  <title></title>
 </head>
-  
 <body>
- <div id="content">
-   <div class="container-fluid">
-  <% if logged_in? %>
-  <span class= "greeting"> Greetings, <%= current_user.username %></span>
-    <br> 
-      <br>
-  <form method='post' action='/sessions'>
-    <input type='hidden' name='_method' value='DELETE' />
-      <input id='logout' type='submit' value='Logout' />
-   </form>
-  
-   <% else %>
-    <p><a href="/sessions/new">Login</a>|<a href="/users">Sign Up</a>|<a href="/index">Home</a></a>
-
-   <% end %>
-     
+<div id="content">
   <%= yield %>
-      </div>
-    </div>
-  </body>
+</div>
+</body>
 </html>
