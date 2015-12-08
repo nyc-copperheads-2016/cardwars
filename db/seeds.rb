@@ -1,12 +1,16 @@
 # Jay's Star Wars Deck
 
+# Dont assume that ID's are what you think they will be.  Use objects and build
+# associations off of those objects.
 Deck.create(name: "Star Wars", round_id: 1)
-sw_id = Deck.find_by(name: "Star Wars").id
+sw = Deck.find_by(name: "Star Wars")
 
+# Use the AR association Getters/Setters to set the association values.  Dont use
+# the underlying id fields if you can avoid it.
 star_wars_cards = [
   { question: "The idea for Chewbacca the Wookiee came from George Lucas's pet what?",
     answer: "dog",
-    deck_id: sw_id
+    deck: sw
   },
   { question: "How many times is the phrase, 'I have a bad feeling about this.' said in the three movies?",
     answer: "5",

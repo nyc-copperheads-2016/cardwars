@@ -1,16 +1,37 @@
+# Proper convention (REST) is:
+#
+# Given :id is a deck_id, a proper route might look like:
+#
+# GET '/decks/:id/rounds/new'
 get '/rounds/new/:id' do
   erb :'rounds/new'
 end
 
+# put '/rounds/:id/answer'
 put '/rounds/answer/:id' do
+  # You really need the card id in order to get a card object here.  Given that,
+  # optimally we would be able to say card.is_correct?(answer)
+  card = Card.find_by(id: params[:card_id])
+
   correct_answer = params[:card]
   current_round = Round.find(params[:id])
   result = false
+
+  # I'd love to have this be:
+  # if card.is_correct?(answer)
+  #   card.mark_correct!
+  # else
+  #   ...
+  # end
   if params[:user_answer].downcase == correct_answer.downcase
-    current_round.deck.cards.find(params[:card_id]).update(correct: true)
+    card.update(correct: true)
     result = true
   else
-    current_round.deck.cards.find(params[:card_id]).update(incorrect_guesses: ( current_round.deck.cards.find(params[:card_id]).incorrect_guesses + 1))
+    # wow.  This is a super long method call.  Not sure where it ends...
+    #
+    # Really need to move this business logic into the models.  Controllers
+    # should be pretty dumb.  models have the smarts.
+    card.increment!(:incorrect_guesses)
   end
   current_round.update(num_guesses: (current_round[:num_guesses] + 1))
   erb :'/rounds/result', locals: { round: current_round, outcome: result, answer: correct_answer }

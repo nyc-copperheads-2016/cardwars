@@ -2,6 +2,10 @@
 class Round < ActiveRecord::Base
   has_one :deck
   belongs_to :user
+
+  def next_card!
+    deck.cards.find_by(id: rand(self.cards.size + 1))
+  end
 end
 
     # The user plays every card in the deck.
